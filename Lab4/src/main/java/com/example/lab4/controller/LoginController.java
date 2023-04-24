@@ -49,12 +49,12 @@ public class LoginController {
         }
     }
 
-    @PostMapping("/reserva")
+    @PostMapping("/registrarReserva")
     public String reservar(@RequestParam("idVuelo") int idVuelo,
                            @RequestParam("idUser") int idUser,
                            @RequestParam("precioVuelo") float precioVuelo){
         reservaRepository.reservarVuelo(precioVuelo,idUser,idVuelo);
-        return "xd";
+        return "homePage";
     }
 
 }

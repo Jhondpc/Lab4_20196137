@@ -77,41 +77,34 @@
         <div class="col-sm-6 mt-2 ml-2 mb-4" th:each = "vuelo:${listaVuelos}">
             <div class="card text-center border-white">
                 <div class="card-body">
-                    <h5 class="card-title mt-3" th:text="${vuelo.origen} + ' - ' + ${vuelo.destino} + '   ($' + ${vuelo.precio} + ')'">Lima - Bogota<span class="text-danger"><b>120.00</b></span></h5>
-                    <p class="text-success" th:text="${vuelo.aerolinea.nombre} + ' - ' + ${vuelo.aerolinea.codigo}"><b>Star Peru - 2I</b> </p>
-                    <p th:text="${vuelo.descripcion}">Definitivamente el turismo en Bogotá en más que Monserrate y la Candelaria, hay muchas excursiones por
-                        senderos
-                        mágicos que puedes realizar. Estas actividades también se conocen como: senderismo, excursionismo,
-                        caminata, montañismo,
-                        hiking o trekking.</p>
-                    <form method="post" th:action="@{'/login/reserva'}">
-                        <input th:value="${vuelo.id}" name="idVuelo" type="hidden" />
-                        <input th:value="${user.id}" name="idUser" type="hidden" />
-                        <input th:value="${vuelo.precio}" name="precioVuelo" type="hidden" />
+                    <h5 class="card-title mt-3" th:text="${vuelo.origen} + ' - ' + ${vuelo.destino} + '   ($' + ${vuelo.precio} + ')'"><span class="text-danger"><b>120.00</b></span></h5>
+                    <p class="text-success" th:text="${vuelo.aerolinea.nombre} + ' - ' + ${vuelo.aerolinea.codigo}"><b></b> </p>
+                    <p th:text="${vuelo.descripcion}"></p>
+                    <form method="post" th:action="@{/reserva/registrarReserva(idUser=${user.id},idVuelo=${vuelo.id},precioVuelo=${vuelo.precio})}">
                         <button type="submit" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#confirmacionReserva">Comprar</button>
                     </form>
+                </div>
+            </div>
+            <div class="modal" id="confirmacionReserva">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Felicidades</h5>
+                            <button type="button" class="close" data-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Se realizó con éxito su reserva</p>
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Entendido</button>
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal" id="confirmacionReserva">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Felicidades</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <p>Se realizó con éxito su reserva</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg btn-block" data-dismiss="modal">Entiendo</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 
