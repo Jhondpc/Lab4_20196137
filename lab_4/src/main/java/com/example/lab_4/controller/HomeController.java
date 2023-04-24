@@ -1,6 +1,6 @@
-package com.example.lab4.controller;
+package com.example.lab_4.controller;
 
-import com.example.lab4.repository.UserRepository;
+import com.example.lab_4.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

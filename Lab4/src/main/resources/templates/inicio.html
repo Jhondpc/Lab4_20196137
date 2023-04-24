@@ -1,47 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-image: ;
+        }
+    </style>
+    <title >Teletravel</title>
 </head>
 <body>
-<div style="background-image:url(fondoInicio.jpg);">
-    <div style="width: fit-content;text-align: center;left: 45%;margin-top: 13%"  class="card body">
+<div class="container text-center mt-5">
+    <div class="row mt-2">
+        <div class="col-3">
+        </div>
+        <div class="col-6 card mt-5 bg-black">
 
-        <div style="width: fit-content" class='container'>
+            <div class="card-body aqua-gradient">
+                <img th:src="@{/assets/img/logo.png}" alt="imagenLogo" class="img-fluid rounded-circle w-50" >
+                <h3 class="text-white mt-2">Bienvenido a Teletravel</h3>
+                <form th:action="@{/login/inicioSesion}" method="post">
 
-            <hr>
-            <h2 style="color: darkgreen" class='mb-3'>Bienvenido</h2>
-            <form method="POST" th:href="@{'/validar'}">
+                    <input type="text" name="correo" class="form-control mt-3" placeholder="Correo">
+                    <input type="text" name="contrasena" class="form-control mt-3" placeholder="Contraseña">
 
-                <div class="form-group">
-                    <input type="text" class="form-control" name="usuario" placeholder="Usuario">
-                </div >
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Contraseña">
-                </div>
-                <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitches">
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary">Ingresar</button>
-                <hr>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-outline-primary mt-4 mb-2 rounded-pill">
+                                    Ingresar</button>
+                            </div>
+                        </div>
 
-            </form>
+                        <div class="col-3"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-3">
         </div>
     </div>
 </div>
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
+
 </html>
